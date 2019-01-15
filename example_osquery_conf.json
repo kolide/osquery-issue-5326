@@ -1,0 +1,26 @@
+{
+  "options": {
+    "logger_event_type": false,
+    "utc": "true"
+  },
+  "decorators": {
+    "always": [
+      "select unix_time as decorator_time from time"
+    ]
+  },
+  "schedule": {
+    "shell_history": {
+      "query": "select * from users cross join shell_history using (uid);",
+      "interval": 5
+    },
+    "known_hosts": {
+      "query": "select * from users cross join known_hosts using (uid);",
+      "interval": 5
+    },
+    "custom_table": {
+      "query": "select * from issue_5326;",
+      "interval": 5
+    }
+  }
+}
+
